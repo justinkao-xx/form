@@ -1,0 +1,1 @@
+This is a simple app that is able to convert Estonian Kroon to Eur.
