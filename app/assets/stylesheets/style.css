@@ -4,7 +4,7 @@
     background-color: #00A0B0;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-        height: 40px;
+    height: 40px;
 }
 form {
     font-family: Verdana, Arial, sans-serif;
@@ -20,7 +20,7 @@ h1 {
 }
 p.footer {
 
-  text-align: bottom;
+  
   margin-top: 100px;
   border-top: 1px solid #000000;
 }
