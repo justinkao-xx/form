@@ -14,7 +14,7 @@ class FormController < ApplicationController
  
   end
   def converter
-    @sign = params[:values].to_s
+    @sign = params[:currency].to_s
     number = 
         if params[:number] == nil
           arv = 0
