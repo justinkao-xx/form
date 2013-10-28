@@ -13,6 +13,10 @@ h1 {
 h2 {
     font-family: 'Open Sans', sans-serif;
 }
+p.text {
+	font-family: 'Open Sans', sans-serif;
+	text-align: center;
+}
 p.footer {
 
   font-family: 'Open Sans', sans-serif;
@@ -29,7 +33,7 @@ p.convert {
 }
 div.forms {
         position: relative;
-        text-align: left;
+        text-align: center;
         top: 30px;        
 }
 

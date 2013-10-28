@@ -14,8 +14,21 @@ class FormController < ApplicationController
  
   end
   def converter
+    @sign = params[:values].to_s
+    number = 
+        if params[:number] == nil
+          arv = 0
+        else
+          rate = params[:number].to_d
+        end
+    rate = 
+        if params[:rate] == nil
+          rate = 0
+        else
+          rate = params[:rate].to_d
+        end
     @currency_list = get_rates
-    @arv = params[:number].to_i * params[:rate].to_i
+    @arv = number * rate
     render :action => :converter
   end
   def about
