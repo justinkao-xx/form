@@ -3,6 +3,7 @@ class FormController < ApplicationController
  
   end
   def converter
+    @exchange = "lib/assets/exchange.xml"
     @arv = params[:x].to_i * 0.0622983046
     render :action => :converter
   end
