@@ -1,7 +1,7 @@
 Harjutus::Application.configure do
   config.serve_static_assets = true
   config.assets.precompile += %w[ bootstrap*.css bootstrap.js ]
-  config.assets.precompile += %w( new_manifest.css )
+  config.assets.precompile += %w( application.css )
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
