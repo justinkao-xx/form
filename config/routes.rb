@@ -5,4 +5,5 @@ Harjutus::Application.routes.draw do
   post "form/converter"
   get "form/about"
   root 'form#home'
+  require 'net/http'
 end

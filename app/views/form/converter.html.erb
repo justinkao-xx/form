@@ -1,11 +1,10 @@
 <% provide(:title, "Converter") %>
-<!--<% provide(:header, "Currency converter - From Estonian Kroon to EUR") %>-->
 <p class="content">
 <%= form_tag(form_converter_path) do %>
 	<div class="forms">
 	<%= label_tag("Amount  :") %>
-	<%= text_field_tag(:x, nil, placeholder: "Enter a number here...")%>
-	<%= select_tag "people", options_from_collection_for_select(@exchange, "id", "name"), prompt: "Select something" %>
+	<%= text_field_tag(:number, nil, placeholder: "Enter a number here...")%>
+	<%= select_tag(:rate, options_for_select(@currency_list)) %>
 	</br>
 	<%= label_tag("Exchange") %>
 	<%= text_field_tag("Exchange rate", number_to_currency(@arv, unit: "€", separator: ",", precision: 3), :readonly => true)%>
