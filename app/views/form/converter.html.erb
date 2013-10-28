@@ -7,7 +7,7 @@
 	<%= select_tag(:rate, options_for_select(@currency_list)) %>
 	</br>
 	<%= label_tag("Exchange") %>
-	<%= text_field_tag("Exchange rate", number_to_currency(@arv, unit: "€", separator: ",", precision: 3), :readonly => true)%>
+	<%= text_field_tag("Exchange rate", number_to_currency(@arv, unit: "€", separator: ",", precision: 4), :readonly => true)%>
 	<%= submit_tag 'Calculate!' %>
 	</div>
 <% end %>

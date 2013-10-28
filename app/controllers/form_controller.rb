@@ -15,7 +15,7 @@ class FormController < ApplicationController
   end
   def converter
     @currency_list = get_rates
-    @arv = params[:number].to_i * params[:currency].to_i
+    @arv = params[:number].to_i * params[:rate].to_i
     render :action => :converter
   end
   def about
