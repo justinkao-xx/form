@@ -1,1 +1,1 @@
-This is a simple app that is able to convert Estonian Kroon to Eur.
+This is a simple app that is able to convert EUR to any currency you choose from the drop-down list. The rates in the list are updated every bank-day.
