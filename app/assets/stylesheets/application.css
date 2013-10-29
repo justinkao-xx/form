@@ -1,25 +1,14 @@
-form {
-    font-family: Verdana, Arial, sans-serif;
+body {
+	font-family: Verdana, Arial, sans-serif;
+	text-align: center;
 }
 input {
-    font-family: Verdana, Arial, sans-serif;
     color: #777;
 }
 h1 {
-    font-family: 'Open Sans', sans-serif;
     color: #FFFFFF;
-    text-align: center;
-}
-h2 {
-    font-family: 'Open Sans', sans-serif;
-}
-p.text {
-	font-family: 'Open Sans', sans-serif;
-	text-align: center;
 }
 p.footer {
-
-  font-family: 'Open Sans', sans-serif;
   margin-top: 100px;
   border-top: 1px solid #000000;
 }
@@ -33,7 +22,6 @@ p.convert {
 }
 div.forms {
         position: relative;
-        text-align: center;
         top: 30px;        
 }
 
@@ -44,11 +32,9 @@ div.buttons {
     border-bottom-right-radius: 10px;
     height: 40px;
     color: #FFFFFF;
-    font-family: 'Open Sans', sans-serif;
     border-radius: 5px;
     font-size: 1em;
     font-weight: bold;
-    text-align: center;
     link color:#FF0000;
      }
 a:link {color:#FFFFFF;}    /* unvisited link */
