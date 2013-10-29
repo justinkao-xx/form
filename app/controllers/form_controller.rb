@@ -1,4 +1,5 @@
 class FormController < ApplicationController
+  # Get .xml from HTTP
   def get_rates
   today_path = Rails.root.join 'rates', "#{Date.today.to_s}.xml"
 
@@ -10,9 +11,11 @@ class FormController < ApplicationController
                        xml
                      end)["Envelope"]["Cube"]["Cube"]["Cube"].map &:values]
   end
+  # Home
   def home
  
   end
+  # Coverter
   def converter
     @sign = params[:currency].to_s
     number = 
@@ -31,6 +34,7 @@ class FormController < ApplicationController
     @arv = number * rate
     render :action => :converter
   end
+  # About
   def about
     
   end
