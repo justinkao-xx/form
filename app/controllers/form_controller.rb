@@ -17,21 +17,14 @@ class FormController < ApplicationController
   end
   # Coverter
   def converter
-    @sign = params[:currency].to_s
-    number = 
-        if params[:number] == nil
-          arv = 0
-        else
-          rate = params[:number].to_d
-        end
-    rate = 
-        if params[:rate] == nil
-          rate = 0
-        else
-          rate = params[:rate].to_d
-        end
     @currency_list = get_rates
-    @arv = number * rate
+    rate = unless get_rates[params[:key]] == nil
+      get_rates[params[:key]].to_d
+    else
+      get_rates[params[:key]].to_i
+    end
+    @arv = params[:number].to_i * rate
+    @key = params[:key,].to_s + " "
     render :action => :converter
   end
   # About
