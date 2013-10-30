@@ -24,7 +24,11 @@ class FormController < ApplicationController
       get_rates[params[:key]].to_i
     end
     @arv = params[:number].to_i * rate
-    @key = params[:key,].to_s + " "
+    @key = unless params[:key] == nil
+      params[:key,].to_s + " "
+    else
+      "USD "
+    end
     render :action => :converter
   end
   # About
