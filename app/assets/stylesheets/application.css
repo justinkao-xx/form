@@ -1,5 +1,5 @@
 body {
-	font-family: Verdana, Arial, sans-serif;
+	font-family: 'Open Sans';
 	text-align: center;
 }
 input {
@@ -9,8 +9,8 @@ h1 {
     color: #FFFFFF;
 }
 p.footer {
-  margin-top: 100px;
-  border-top: 1px solid #000000;
+	margin-top: 100px;
+	border-top: 1px solid #000000;
 }
 p.convert {
 	border-radius: 5px;
@@ -21,8 +21,8 @@ p.convert {
     background-color: #00A0B0;
 }
 div.forms {
-        position: relative;
-        top: 30px;        
+    position: relative;
+	top: 30px;        
 }
 
 div.buttons {
@@ -37,7 +37,7 @@ div.buttons {
     font-weight: bold;
     link color:#FF0000;
      }
-a:link {color:#FFFFFF;}    /* unvisited link */
-a:visited {color:#FFFFFF;} /* visited link */
-a:hover {color:#FFFFFF;}   /* mouse over link */
-a:active {color:#FFFFFF;}  /* selected link */
+a:link {color:#FFFFFF; text-decoration: none}    /* unvisited link */
+a:visited {color:#FFFFFF; text-decoration: none} /* visited link */
+a:hover {color:#FFFFFF; text-decoration: none}   /* mouse over link */
+a:active {color:#FFFFFF; text-decoration: none}  /* selected link */
