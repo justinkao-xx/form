@@ -1,9 +1,5 @@
 Harjutus::Application.routes.draw do
-=begin
-  resources :form
-  root 'form#home'
-=end
-
+  resources :users
   get "form/home"
   post "form/home"
   get "form/converter"
