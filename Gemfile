@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 group :production do
   gem 'rails_12factor'
 end
+# password encryption
+gem 'bcrypt-ruby', '~>3.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
