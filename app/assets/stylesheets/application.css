@@ -37,6 +37,11 @@ div.buttons {
     font-weight: bold;
     link color:#FF0000;
      }
+
+.gravatar {
+  float: center;
+  margin-right: 10px;
+}
 a:link {color:#FFFFFF; text-decoration: none}    /* unvisited link */
 a:visited {color:#FFFFFF; text-decoration: none} /* visited link */
 a:hover {color:#FFFFFF; text-decoration: none}   /* mouse over link */
