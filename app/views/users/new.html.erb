@@ -4,8 +4,21 @@
 		Account creation</br>
 		Fill out the forms below	
 	</p>
-<%= form_tag(users_new_path) do |f| %>
+<%= form_for(@user) do |f| %>
 	<div class="forms">
+	<%= f.label :email %>
+	<%= f.text_field :email %>
+	
+	<%= f.label :name %>
+	<%= f.text_field :name%>
+	
+	<%= f.label :password %>
+	<%= f.password_field :password %>
+	
+	<%= f.label :password_confirmation %>
+	<%= f.password_field :password_confirmation %>
+	
+	<%= f.submit "Register my Account"%>
 	
 	</div>
 <% end %>
