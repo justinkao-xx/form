@@ -9,7 +9,7 @@ class UsersController < ApplicationController
       if @user.save
         sign_in @user
         flash[:success]= "Registration success!"
-        redirect_to user_path(:user)
+        redirect_to user_path(current_user)
       else
         render 'new'
      end 
