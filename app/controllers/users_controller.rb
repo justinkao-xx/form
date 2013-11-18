@@ -1,21 +1,28 @@
 class UsersController < ApplicationController
+  
   def new
-    
-  end
-  def create
-    
-  end
-  def show
-    @user = User.find(params[:id])
-  end
-  def edit
-    
+      @user = User.new
   end
   
-  def update
-    
+  def create
+    @user = User.new(params[user_params])
+      if @user.save
+        sign_in @user
+        flash[:success]= "Registration success!"
+        redirect_to @user
+      else
+        render 'new'
+     end 
   end
-  def destroy
-    
+  
+  def show
+    if signed_in?
+      @user = User.find(params[:id])
+    end
   end
+private
+  def user_params
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
+  
 end
