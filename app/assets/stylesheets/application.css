@@ -14,8 +14,10 @@ p.footer {
 }
 
 div.forms {
-    position: relative;
-	top: 30px;        
+	position: relative;
+	margin: 0 auto;
+	padding: 20px 20px 70px;
+    width: 200px;
 }
 
 div.buttons {

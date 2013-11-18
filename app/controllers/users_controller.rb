@@ -16,9 +16,9 @@ class UsersController < ApplicationController
   end
   
   def show
-    if signed_in?
+    #if signed_in?
       @user = User.find(params[:id])
-    end
+    #end
   end
 private
   def user_params
