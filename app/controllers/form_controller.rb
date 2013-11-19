@@ -29,7 +29,7 @@ class FormController < ApplicationController
     else
       "USD "
     end
-    render :action => :converter
+    render 'converter'
   end
   # About
   def about
