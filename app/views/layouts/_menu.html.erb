@@ -2,5 +2,12 @@
 	<%= link_to 'Main page', form_home_path %> |
 	<%= link_to 'Currency converter', form_converter_path %> |
 	<%= link_to 'About page', form_about_path %> |
-	<%= link_to 'Log in / create new user', new_session_path %>
+	<% if signed_in? %>
+	<%= link_to "Users", '#' %> |
+	<%= link_to "Profile", current_user %> |
+	<%= link_to "Settings", '#' %> |
+	<%= link_to "Sign out", signout_path, method: "delete" %>
+	<% else %>
+	<%= link_to 'Log in', new_session_path %>
+	<% end %>
 </div>
