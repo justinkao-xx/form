@@ -9,6 +9,5 @@ Harjutus::Application.routes.draw do
   root 'form#home'
   require 'net/http'
   match "/signout", to: 'sessions#destroy', via: :delete
-  match "/users", to: 'users#new'
 
 end
