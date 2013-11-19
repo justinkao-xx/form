@@ -9,7 +9,7 @@ class UsersController < ApplicationController
       if @user.save
         sign_in @user
         flash[:success]= "Registration success!"
-        redirect_to user_path(current_user)
+        redirect_to @user
       else
         render 'new'
      end 
@@ -20,7 +20,7 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
     #end
   end
-private
+  private
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
