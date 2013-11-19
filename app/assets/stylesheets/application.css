@@ -37,3 +37,8 @@ a:link {color:#FFFFFF; text-decoration: none}    /* unvisited link */
 a:visited {color:#FFFFFF; text-decoration: none} /* visited link */
 a:hover {color:#FFFFFF; text-decoration: none}   /* mouse over link */
 a:active {color:#FFFFFF; text-decoration: none}  /* selected link */
+
+a.black:link {color:#00A0B0; text-decoration: none}    /* unvisited link */
+a.black:visited {color:#00A0B0; text-decoration: none} /* visited link */
+a.black:hover {color:#00A0B0; text-decoration: none}   /* mouse over link */
+a.black:active {color:#00A0B0; text-decoration: none}  /* selected link */
