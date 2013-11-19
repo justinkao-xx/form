@@ -1,0 +1,44 @@
+body {
+	font-family: 'Open Sans';
+	text-align: center;
+}
+input {
+    color: #777;
+}
+h1 {
+    color: #FFFFFF;
+}
+p.footer {
+	margin-top: 100px;
+	border-top: 1px solid #000000;
+}
+
+div.forms {
+	position: relative;
+	margin: 0 auto;
+	padding: 20px 20px 70px;
+    width: 200px;
+}
+
+div.buttons {
+    position: relative;
+    background-color: #00A0B0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 40px;
+    color: #FFFFFF;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    link color:#FF0000;
+     }
+
+a:link {color:#FFFFFF; text-decoration: none}    /* unvisited link */
+a:visited {color:#FFFFFF; text-decoration: none} /* visited link */
+a:hover {color:#FFFFFF; text-decoration: none}   /* mouse over link */
+a:active {color:#FFFFFF; text-decoration: none}  /* selected link */
+
+a.black:link {color:#00A0B0; text-decoration: none}    /* unvisited link */
+a.black:visited {color:#00A0B0; text-decoration: none} /* visited link */
+a.black:hover {color:#00A0B0; text-decoration: none}   /* mouse over link */
+a.black:active {color:#00A0B0; text-decoration: none}  /* selected link */
