@@ -20,4 +20,7 @@ private
     self.remember_token = User.encrypt(User.new_remember_token)
     self.email = self.email.downcase if self.email.present?
   end
+  def create_remember_token
+      self.remember_token = User.encrypt(User.new_remember_token)
+    end
 end
