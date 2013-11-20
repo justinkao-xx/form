@@ -1,5 +1,8 @@
 <% provide(:title, @user.name) %>
-<p>
-    <%= @user.name %>
-</p>
-   
+
+<p class="content">
+	<p class="text">
+		You account information:</br>
+		Name: <%= @user.name %></br>
+		Email: <%= @user.email %>
+	</p>
