@@ -41,9 +41,13 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
-  
+  # Redirecting not logged in user etc.
   def signed_in_user
-    redirect_to '/sessions/new', notice: "Please sign in!" unless signed_in?
+    unless signed_in?
+      store_location
+      redirect_to '/sessions/new', notice: "Please sign in!"
+    end
+    
   end
   
   def correct_user
