@@ -4,4 +4,7 @@ module SessionsHelper
                 self.current_user = user
                 flash[:success] = "Sign in successful"
   end
+  def signed_in?
+                !current_user.nil?
+  end
 end
