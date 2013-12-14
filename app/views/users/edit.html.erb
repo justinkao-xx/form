@@ -1,8 +1,7 @@
-<% provide(:title, "Create an account") %>
+<% provide(:title, "Edit account") %>
 <p class="content">
 	<p class="text">
-		Account creation</br>
-		Fill out the forms below	
+		Edit your account information here:	
 	</p>
 <%= form_for(@user) do |f| %>
 	<div class="forms">
@@ -11,7 +10,6 @@
 	<%= f.text_field :name, placeholder: "Name..."%>
 	<%= f.password_field :password, placeholder: "Password..."%>
 	<%= f.password_field :password_confirmation, placeholder: "Password confirmation..." %></br>
-	<%= f.submit "Register my Account"%>
-	
+	<%= f.submit "Save changes"%>
 	</div>
 <% end %>

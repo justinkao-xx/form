@@ -1,5 +1,6 @@
 Harjutus::Application.routes.draw do
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
   get "form/home"
   post "form/home"
   get "form/converter"
@@ -7,5 +8,6 @@ Harjutus::Application.routes.draw do
   get "form/about"
   root 'form#home'
   require 'net/http'
+  match "/signout", to: 'sessions#destroy', via: :delete
 
 end

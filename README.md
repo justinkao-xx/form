@@ -1,1 +1,2 @@
 This is a simple app that is able to convert EUR to any currency you choose from the drop-down list. The rates in the list are updated every bank-day.
+Adding a simple user creation and login system to this app also for learning.

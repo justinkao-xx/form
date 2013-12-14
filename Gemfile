@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
-group :production do
-  gem 'rails_12factor'
-end
+
 # password encryption
 gem 'bcrypt-ruby', '~> 3.0.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -37,8 +35,9 @@ group :doc do
 end
 
 group :production do
+  gem 'rails_12factor'
   gem 'pg'
-end        
+end
 group :development, :test do
   gem 'sqlite3'
 end
