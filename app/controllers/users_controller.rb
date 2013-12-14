@@ -24,13 +24,7 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
-=begin
-  def show
-    if signed_in?
-      @user = User.find(params[:id])
-    end
-  end
-=end 
+
   def edit
     
   end
