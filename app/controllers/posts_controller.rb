@@ -20,8 +20,7 @@ class PostsController < ApplicationController
   end
   
   def destroy
-    Post.find(params[:id]).destroy
-    flash[:success] = "Post Deleted."
+    @post.destroy
     redirect_to users_url
   end
  
@@ -29,5 +28,10 @@ class PostsController < ApplicationController
  
   def post_params
     params.require(:post).permit(:content)
+  end
+  
+  def correct_user
+    @post = current_user.posts.find_by(id: params[:id])
+      redirect_to root_url if @post.nil?
   end
 end
