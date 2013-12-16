@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+ 
   def index
     @post = current_user.posts.build
   end
@@ -20,7 +21,8 @@ class PostsController < ApplicationController
   end
   
   def destroy
-    @post.destroy
+    Post.find(params[:id]).destroy
+    flash[:success] = "Post Deleted."
     redirect_to users_url
   end
  
@@ -30,8 +32,4 @@ class PostsController < ApplicationController
     params.require(:post).permit(:content)
   end
   
-  def correct_user
-    @post = current_user.posts.find_by(id: params[:id])
-      redirect_to root_url if @post.nil?
-  end
 end
