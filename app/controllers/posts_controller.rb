@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    
+    @post = current_user.posts.build
   end
   
   def show
@@ -8,20 +8,22 @@ class PostsController < ApplicationController
   end
   
   def create
-     @post = current_user.Post.new(post_params)
+     @post = current_user.posts.build(post_params)
     if @post.save
-      flash[:success] = "post created!"
+      flash[:success] = "Post created!"
       redirect_to root_url
     else
-      render 'static_pages/home'
+      render 'posts/index'
     end
   end
   
   def destroy
     
   end
+ 
   private
-  def posts_params
-    params.require(:posts).permit(:content)
+ 
+  def post_params
+    params.require(:post).permit(:content)
   end
 end
