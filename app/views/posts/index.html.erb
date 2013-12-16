@@ -1,0 +1,14 @@
+<% provide(:title, "Make post") %>
+
+<p class="content">
+    Make new posts:
+    <%= form_tag(@post) do %>
+		<div class="forms">
+		<%= text_area_tag(:text, nil, placeholder: "Type what you want to say...")%>
+		<%= submit_tag 'Submit!' %>
+		</div>
+	<% end %>
+    
+    
+	</p>
+	

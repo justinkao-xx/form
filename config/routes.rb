@@ -1,6 +1,10 @@
 Harjutus::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  get "posts/index"
+  post "posts/index"
+  get "posts/create"
+  post "posts/create"
   get "form/home"
   post "form/home"
   get "form/converter"
