@@ -1,16 +1,15 @@
 <% provide(:title, 'All users') %>
 <p class="content">
 	<p class="text">
-		All users:
+		All users</br>(Click on an user to see more info about them and to see all the posts they have made on this page)
 	</p>
 <ul class="users">
   <% @users.each do |user| %>
-    <li>
-      <%= link_to user.name, user, class: "black" %>
-      <% if current_user.admin? && !current_user?(user) %>
-    | <%= link_to "Delete this user", user, method: :delete, class: "black",
-                                  data: { confirm: "You sure?" } %>
-  	  <% end %>
+ 	<li>
+	<%= link_to user.name, user, class: "black" %>
+	<% if current_user.admin? && !current_user?(user) %> |
+	<%= link_to "Delete this user", user, method: :delete, class: "black", data: { confirm: "You sure?" } %>
+  	<% end %>
     </li>
   <% end %>
 </ul>

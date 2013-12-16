@@ -9,8 +9,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
-    posts = @user.posts.all
-    
+    @posts = @user.posts.all
   end
   
   def new
@@ -18,10 +17,10 @@ class UsersController < ApplicationController
   end
   
   def create
-    @post = current_user.posts.create(post_params)
+    @user = User.new(user_params)
     if @user.save
       sign_in @user
-      flash.now[:success] = "Post created!"
+      flash[:success] = "Registration was successful!"
       redirect_to @user
     else
       render 'new'

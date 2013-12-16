@@ -6,19 +6,23 @@ class PostsController < ApplicationController
   def show
     
   end
-  
+  def new
+    @post = current_user.posts.build
+  end
   def create
      @post = current_user.posts.build(post_params)
     if @post.save
       flash[:success] = "Post created!"
-      redirect_to root_url
+      redirect_to current_user
     else
-      render 'posts/index'
+      render posts_new_path
     end
   end
   
   def destroy
-    
+    Post.find(params[:id]).destroy
+    flash[:success] = "Post Deleted."
+    redirect_to users_url
   end
  
   private
