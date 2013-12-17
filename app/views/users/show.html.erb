@@ -14,7 +14,7 @@
  		 	<li>
  		 	This post was created at: <%= i.created_at %></br>
  		 	Contents of the post: <%= i.content %>
-			<%= link_to "Delete this post", posts_path, method: :delete, class: "black", data: { confirm: "You sure?" } %>
+			<%= link_to "Delete this post", post_path(i), method: :delete, class: "black", data: { confirm: "You sure?" } %>
  		 	</li>
  		 <% end %>
     	<% end %>
