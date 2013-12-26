@@ -1,0 +1,13 @@
+<% provide(:title, 'Movies') %>
+<p class="content">
+	<p class="text">
+		A list of movies in the database
+	</p>
+<ul class="users">
+  <% @movies.each do |movie| %>
+ 	<li>
+	<%= link_to movie.name, movie, class: "black" %>
+	
+    </li>
+ <% end %>
+</ul>

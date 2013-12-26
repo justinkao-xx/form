@@ -16,7 +16,7 @@ class PostsController < ApplicationController
       flash[:success] = "Post created!"
       redirect_to current_user
     else
-      render posts_new_path
+      render current_user
     end
   end
   
