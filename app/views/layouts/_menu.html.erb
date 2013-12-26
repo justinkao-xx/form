@@ -7,7 +7,7 @@
 	<%= link_to "Profile", current_user %> |
 	<%= link_to "Settings", edit_user_path(current_user) %> |
 	<%= link_to "Sign out", signout_path, method: "delete" %> |
-	<%= link_to "Make new posts", posts_new_path %> 
+	<%= link_to "Make new posts", new_post_path %>
 	<% else %>
 	<%= link_to 'Log in', new_session_path %>
 	<% end %>
