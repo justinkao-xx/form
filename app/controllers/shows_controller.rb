@@ -1,13 +1,13 @@
-class MoviesController < ApplicationController
+class ShowsController < ApplicationController
   before_action :signed_in_user, only: [:index,:edit,:update, :destroy]
   before_action :correct_user, only: [:edit,:update]
   before_action :admin_user,     only: :destroy
   def index
-    @movies = Movie.all
+    @shows = Show.all
   end
   
   def show
-    @movie = Movie.find(params[:id])
+    @show = Show.find(params[:id])
   end
   
   def new

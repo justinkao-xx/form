@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131226191813) do
+ActiveRecord::Schema.define(version: 20140115192556) do
 
   create_table "movies", force: true do |t|
     t.string   "name"
@@ -29,6 +29,15 @@ ActiveRecord::Schema.define(version: 20131226191813) do
   end
 
   add_index "posts", ["user_id", "created_at"], name: "index_posts_on_user_id_and_created_at"
+
+  create_table "shows", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "year"
+    t.integer  "seasons"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "name"
