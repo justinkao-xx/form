@@ -47,6 +47,7 @@ class UsersController < ApplicationController
     flash[:success] = "User Deleted."
     redirect_to users_url
   end
+  # Private section, makes the page unable to be seen for non logged in users
   private
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)

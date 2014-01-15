@@ -13,6 +13,7 @@ class ShowsController < ApplicationController
   def new
     
   end
+  # Private section, makes the page unable to be seen for non logged in users
   private
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
