@@ -39,6 +39,11 @@ class ShowsController < ApplicationController
     flash[:success] = "Show deleted from the database."
     redirect_to shows_path
   end
+  
+  def edit
+    
+  end
+  
   # Private section, makes the page unable to be seen for non logged in users
   private
   def show_params

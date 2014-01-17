@@ -38,7 +38,11 @@ class MoviesController < ApplicationController
     flash[:success] = "Movie deleted from the database."
     redirect_to movies_path
   end
-    
+  
+  def edit
+
+  end
+   
   # Private section, makes the page unable to be seen for non logged in users
   private
   def movie_params
