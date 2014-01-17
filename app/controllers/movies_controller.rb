@@ -11,10 +11,31 @@ class MoviesController < ApplicationController
   end
   
   def new
-    
+    @movie = Movie.new
   end
+  
+  def create
+    @movie = Movie.create(movie_params)
+    if @movie.save
+      flash[:success] = "Movie posted!"
+      redirect_to movies_path
+    else
+      render new_movie_path
+    end
+  end
+  
+  def destroy
+    Movie.find(params[:id]).destroy
+    flash[:success] = "Movie deleted from the database."
+    redirect_to movies_path
+  end
+    
   # Private section, makes the page unable to be seen for non logged in users
   private
+  def movie_params
+    params.require(:movie).permit(:name, :description, :year)
+  end
+  
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end

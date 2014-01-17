@@ -1,0 +1,18 @@
+<% provide(:title, 'Shows') %>
+<p class="content">
+	<p class="text">
+		A list of different shows in the database
+	</p>
+<ul class="users">
+  <% @shows.each do |show| %>
+ 	<li>
+	<%= link_to show.name, show, class: "black" %>
+	<% if current_user.admin? && !current_user?(@user) %> |
+	<%= link_to "Delete this show", show, method: :delete, class: "black", data: { confirm: "You sure?" } %>
+  	<% end %>
+    </li>
+ <% end %>
+</ul>
+<p class="text">
+	<%= link_to "A show you know about is not listed here? Click here to add it!", new_show_path, class: "black" %>
+</p>

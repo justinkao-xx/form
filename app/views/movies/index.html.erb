@@ -6,8 +6,13 @@
 <ul class="users">
   <% @movies.each do |movie| %>
  	<li>
-	<%= link_to movie.name, movie, class: "black" %>
-	
+	<%= link_to movie.name.capitalize, movie, class: "black" %>
+	<% if current_user.admin? && !current_user?(@user) %> |
+	<%= link_to "Delete this movie", movie, method: :delete, class: "black", data: { confirm: "You sure?" } %>
+  	<% end %>
     </li>
  <% end %>
 </ul>
+<p class="text">
+	<%= link_to "A movie you know about is not listed here? Click here to add it!", new_movie_path, class: "black" %>
+</p>

@@ -1,0 +1,15 @@
+<% provide(:title, "Edit show") %>
+<p class="content">
+	<p class="text">
+		Edit your account information here:	
+	</p>
+<%= form_for(@user) do |f| %>
+	<div class="forms">
+	<%= render 'shared/error_messages' %>
+	<%= f.text_field :email, placeholder: "Email..." %>
+	<%= f.text_field :name, placeholder: "Name..."%>
+	<%= f.password_field :password, placeholder: "Password..."%>
+	<%= f.password_field :password_confirmation, placeholder: "Password confirmation..." %></br>
+	<%= f.submit "Save changes"%>
+	</div>
+<% end %>
