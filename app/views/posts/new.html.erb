@@ -1,6 +1,6 @@
 <% provide(:title, "Make post") %>
 
-<b align="center">Make new posts:</b>
+<h2 align="center">Make new posts:</h2>
     <%= form_for(@post) do |f| %>
     	<div class="forms">
 			<%= f.text_area :content, placeholder: "Type what you want to say...", autofocus: true %>
