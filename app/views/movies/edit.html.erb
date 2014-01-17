@@ -1,8 +1,8 @@
 <% provide(:title, "Edit movie") %>
-<p class="content">
-	<p class="text">
-		Edit your account information here:	
-	</p>
+
+<h2 align="center">Edit movie:	</h2>
+Edit the movie in here:
+	
 <%= form_for @movie do |f| %>
     	<div class="forms">
     		<%= f.text_field :name, placeholder: "Name of the movie..." %>

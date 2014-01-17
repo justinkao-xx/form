@@ -1,5 +1,6 @@
-<% provide(:title, @movie.name) %>
+<% provide(:title, @movie.name.capitalize) %>
 
+<h2 align="center">About: <%= @movie.name.capitalize %></h2>
 <table align="center">
 	<tr>
 		<td align="left"><b>Name</b></td>
