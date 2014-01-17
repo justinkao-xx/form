@@ -33,16 +33,16 @@ class MoviesController < ApplicationController
     end
   end
   
+  def edit
+    
+  end
+  
   def destroy
     Movie.find(params[:id]).destroy
     flash[:success] = "Movie deleted from the database."
     redirect_to movies_path
   end
-  
-  def edit
-    @movie = Movie.find(params[:id])
-  end
-   
+ 
   # Private section, makes the page unable to be seen for non logged in users
   private
   def movie_params

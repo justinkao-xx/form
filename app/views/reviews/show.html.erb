@@ -1,0 +1,12 @@
+<% provide(:title, @review.heading) %>
+
+<p class="content">
+	<p class="text">
+		About the review:</br>
+		Name: <%= @review.heading %></br>
+		Description: <%= @review.content %></br>
+		<%= link_to "Edit review", edit_review_path, class: "black" %> or
+		<%= link_to "Back to previous page", reviews_path, class: "black" %>
+	</p>
+	</p>
+	

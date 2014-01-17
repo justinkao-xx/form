@@ -5,6 +5,7 @@ Harjutus::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :movies
   resources :shows
+  resources :reviews
   
   get "posts/new"
   get "form/home"
