@@ -1,0 +1,28 @@
+<% provide(:title, 'Reviews') %>
+<p class="content">
+	<p class="text">
+		A list of reviews
+	</p>
+<table align="center">
+	<tr>
+		<td align="left"><b>Heading</b></td>
+		<td align="left"><b>Written by</b></td>
+		<% if current_user.admin? && !current_user?(@user) %>
+		<td align="left"><b>Admin functions</b></td>
+		<% end %>
+	</tr>
+  <% @reviews.each do |review| %>
+ 	<tr>
+ 		<td align="left"><%= link_to review.heading.capitalize, review, class: "black" %></td>
+ 		<td align="left"><%= link_to review.user.name, review.user, class: "black" %></td>	
+	<% if current_user.admin? && !current_user?(@user) %>
+		<td>
+			<%= link_to "Delete this review", review, method: :delete, class: "black", data: { confirm: "You sure?" } %>
+  		</td>
+  	<% end %>
+ 	</tr>
+ <% end %>
+</table>
+<p class="text">
+	<%= link_to "Want to write a review about a movie? Click here!!", new_review_path, class: "black" %>
+</p>

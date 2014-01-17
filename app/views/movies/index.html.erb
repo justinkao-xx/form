@@ -1,0 +1,28 @@
+<% provide(:title, 'Movies') %>
+<p class="content">
+	<p class="text">
+		A list of movies in the database
+	</p>
+<table align="center">
+	<tr>
+		<td align="left"><b>Name</b></td>
+		<td align="left"><b>Year</b></td>
+		<% if current_user.admin? && !current_user?(@user) %>
+		<td align="left"><b>Admin functions</b></td>
+		<% end %>
+	</tr>
+  <% @movies.each do |movie| %>
+ 	<tr>
+ 		<td align="left"><%= link_to movie.name.capitalize, movie, class: "black" %></td>
+ 		<td align="left"><%= link_to movie.year, movie, class: "black" %></td>
+	<% if current_user.admin? && !current_user?(@user) %>
+		<td>
+			<%= link_to "Delete this movie", movie, method: :delete, class: "black", data: { confirm: "You sure?" } %>
+  		</td>
+  	<% end %>
+ 	</tr>
+ <% end %>
+</table>
+<p class="text">
+	<%= link_to "A movie you know about is not listed here? Click here to add it!", new_movie_path, class: "black" %>
+</p>

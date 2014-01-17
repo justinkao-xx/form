@@ -1,54 +1,54 @@
-class UsersController < ApplicationController
+class MoviesController < ApplicationController
   before_action :signed_in_user, only: [:index,:edit,:update, :destroy]
-  before_action :correct_user, only: [:edit,:update]
   before_action :admin_user,     only: :destroy
-  
+  before_action :set_movie, only: [:show, :edit, :update, :destroy]
   def index
-    @users = User.all
+    @movies = Movie.all
   end
   
   def show
-    @user = User.find(params[:id])
-    @posts = @user.posts.all
+    @movie = Movie.find(params[:id])
   end
   
   def new
-    @user = User.new
+    @movie = Movie.new
   end
   
   def create
-    @user = User.new(user_params)
-    if @user.save
-      sign_in @user
-      flash[:success] = "Registration was successful!"
-      redirect_to @user
+    @movie = Movie.create(movie_params)
+    if @movie.save
+      flash[:success] = "Movie posted!"
+      redirect_to movies_path
     else
-      render 'new'
+      render new_movie_path
     end
-  end
-
-  def edit
-    
   end
   
   def update
-    
-    if @user.update_attributes(user_params)
+    if @movie.update_attributes(movie_params)
       flash[:success] = "Update successful"
-      sign_in @user
-      redirect_to @user
+      redirect_to @movie
     else
       render 'edit'
     end
   end
   
-  def destroy
-    User.find(params[:id]).destroy
-    flash[:success] = "User Deleted."
-    redirect_to users_url
+  def edit
+    
   end
+  
+  def destroy
+    Movie.find(params[:id]).destroy
+    flash[:success] = "Movie deleted from the database."
+    redirect_to movies_path
+  end
+ 
   # Private section, makes the page unable to be seen for non logged in users
   private
+  def movie_params
+    params.require(:movie).permit(:name, :description, :year)
+  end
+  
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
@@ -64,8 +64,8 @@ class UsersController < ApplicationController
     
   end
   
-  def correct_user
-    @user = User.find(params[:id])
-    redirect_to root_url unless current_user?(@user)
+  def set_movie
+    @movie = Movie.find(params[:id])
   end
+  
 end

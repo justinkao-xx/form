@@ -1,14 +1,25 @@
-<div class="buttons">
-	<%= link_to 'Main page', form_home_path %> |
-	<%= link_to 'Currency converter', form_converter_path %> |
-	<%= link_to 'About page', form_about_path %></br>
-	<% if signed_in? %>
-	<%= link_to "Users", users_path %> |
-	<%= link_to "Profile", current_user %> |
-	<%= link_to "Settings", edit_user_path(current_user) %> |
-	<%= link_to "Sign out", signout_path, method: "delete" %> |
-	<%= link_to "Make new posts", posts_new_path %> 
-	<% else %>
-	<%= link_to 'Log in', new_session_path %>
-	<% end %>
+<div id='cssmenu'>
+<ul>
+   <li class='active'><%= link_to 'Main page', form_home_path %></li>
+   <li class='has-sub'><%= link_to 'Converter/Databases', form_converter_path %>
+      <ul>
+         <li class='active'><%= link_to 'Movies', movies_path %></li>
+         <li class='active'><%= link_to 'Shows', shows_path %></li>
+         <li class='active'><%= link_to 'Reviews', reviews_path %></li>   
+      </ul>
+   </li>
+   <li class='has-sub'><%= link_to "Users", users_path %>
+   	<ul>
+   		<% if signed_in? %>
+   		<li><%= link_to "Profile", current_user %></li>
+		<li><%= link_to "Settings", edit_user_path(current_user) %></li>
+		<li><%= link_to "Make new posts", posts_new_path %></li>
+		<li><%= link_to "Sign out", signout_path, method: "delete" %></li>
+		<% else %>
+		<li><%= link_to 'Log in', new_session_path %></li>
+		<% end %>
+   	</ul>
+   </li>
+   <li class='last'><%= link_to 'About page', form_about_path %></li>
+</ul>
 </div>

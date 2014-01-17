@@ -9,7 +9,7 @@
 <%= form_tag(form_converter_path) do %>
 	<div class="forms">
 	<%= label_tag("Amount:") %>
-	<%= text_field_tag(:number, nil, placeholder: "Enter a number here...")%>
+	<%= text_field_tag(:number, nil, placeholder: "Enter a number here...", autofocus: true)%>
 	<%= label_tag("Exchange rate:") %>
 	<%= text_field_tag("Exchange rate", number_to_currency(@arv, unit: @key, separator: ",", precision: 4), :readonly => true)%>
 	<%= select_tag(:key, options_for_select(@currency_list.keys, @currency_list.keys.first)) %>

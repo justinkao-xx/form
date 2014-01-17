@@ -1,15 +1,24 @@
 <% provide(:title, 'All users') %>
-<p class="content">
-	<p class="text">
-		All users</br>(Click on an user to see more info about them and to see all the posts they have made on this page)
-	</p>
-<ul class="users">
+
+<b>All users</br>(Click on an user to see more info about them and to see all the posts they have made on this page)</b>
+
+<table align="center">
+	<tr>
+		<td align="left"><b>Name</b></td>
+		<td align="left"><b>Joined</b></td>
+		<% if current_user.admin? && !current_user?(@user) %>
+		<td align="left"><b>Admin functions</b></td>
+		<% end %>
+	</tr>
   <% @users.each do |user| %>
- 	<li>
-	<%= link_to user.name, user, class: "black" %>
-	<% if current_user.admin? && !current_user?(user) %> |
-	<%= link_to "Delete this user", user, method: :delete, class: "black", data: { confirm: "You sure?" } %>
+ 	<tr>
+ 		<td align="left"><%= link_to user.name.capitalize, user, class: "black" %></td>
+ 		<td align="left"><%= link_to user.created_at, user, class: "black" %></td>
+	<% if current_user.admin? && !current_user?(@user) %>
+		<td>
+			<%= link_to "Delete this user", user, method: :delete, class: "black", data: { confirm: "You sure?" } %>
+  		</td>
   	<% end %>
-    </li>
-  <% end %>
-</ul>
+ 	</tr>
+ <% end %>
+</table>

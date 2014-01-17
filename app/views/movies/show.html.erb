@@ -1,0 +1,19 @@
+<% provide(:title, @movie.name) %>
+
+<table align="center">
+	<tr>
+		<td align="left"><b>Name</b></td>
+		<td align="left"><b>Description</b></td>
+		<td align="left"><b>Year created</b></td>
+	</tr>
+ 	<tr>
+ 		<td align="left"><%= @movie.name.capitalize %></td>
+ 		<td align="left"><%= @movie.description.capitalize %></td>
+ 		<td align="left"><%= @movie.created_at %></td>
+ 	</tr>
+</table>
+
+<%= link_to "Edit movie", edit_movie_path, class: "black" %> or
+<%= link_to "Back to previous page", movies_path, class: "black" %>
+	
+	

@@ -3,6 +3,9 @@ Harjutus::Application.routes.draw do
   resources :posts, only: [:new, :create, :destroy]
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :movies
+  resources :shows
+  resources :reviews
   
   get "posts/new"
   get "form/home"

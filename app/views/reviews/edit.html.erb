@@ -1,0 +1,14 @@
+<% provide(:title, "Edit movie") %>
+<p class="content">
+	<p class="text">
+		Edit review here:	
+	</p>
+<%= form_for @review do |f| %>
+    	<div class="forms">
+    		<%= f.text_field :heading, placeholder: "Type in the heading for your review...", autofocus: true %>
+			<%= f.text_area :about, placeholder: "What movie is your review about..." %>
+			<%= f.text_area :content, placeholder: "Type in the content for your review..." %>
+			<%= f.submit 'Submit!' %>
+			<%= link_to "Back to movies", movies_path, class: "black" %>
+		</div>
+	<% end %>
