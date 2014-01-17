@@ -1,15 +1,15 @@
 <% provide(:title, "Edit show") %>
 <p class="content">
 	<p class="text">
-		Edit your account information here:	
+		Edit information about the show in here:	
 	</p>
-<%= form_for(@user) do |f| %>
-	<div class="forms">
-	<%= render 'shared/error_messages' %>
-	<%= f.text_field :email, placeholder: "Email..." %>
-	<%= f.text_field :name, placeholder: "Name..."%>
-	<%= f.password_field :password, placeholder: "Password..."%>
-	<%= f.password_field :password_confirmation, placeholder: "Password confirmation..." %></br>
-	<%= f.submit "Save changes"%>
-	</div>
-<% end %>
+<%= form_for :movie do |f| %>
+    	<div class="forms">
+    		<%= f.text_field :name, placeholder: "Name of the show..." %>
+			<%= f.text_area :description, placeholder: "Describe the show..." %>
+			<%= f.text_field :year, placeholder: "When was it released..." %>
+			<%= f.text_field :seasons, placeholder: "How many seasons does it have..." %>
+			<%= f.submit 'Submit!' %></br>
+			<%= link_to "Back to shows", shows_path, class: "black" %>
+		</div>
+	<% end %>

@@ -5,6 +5,7 @@
 		About the movie:</br>
 		Name: <%= @movie.name %></br>
 		Description: <%= @movie.description %></br>
+		<%= link_to "Edit movie", edit_movie_path, class: "black" %> or
 		<%= link_to "Back to previous page", movies_path, class: "black" %>
 	</p>
 	</p>

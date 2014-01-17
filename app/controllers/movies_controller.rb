@@ -1,6 +1,5 @@
 class MoviesController < ApplicationController
   before_action :signed_in_user, only: [:index,:edit,:update, :destroy]
-  before_action :correct_user, only: [:edit,:update]
   before_action :admin_user,     only: :destroy
   def index
     @movies = Movie.all
@@ -40,7 +39,7 @@ class MoviesController < ApplicationController
   end
   
   def edit
-
+   
   end
    
   # Private section, makes the page unable to be seen for non logged in users
@@ -64,8 +63,4 @@ class MoviesController < ApplicationController
     
   end
   
-  def correct_user
-    @user = User.find(params[:id])
-    redirect_to root_url unless current_user?(@user)
-  end
 end
