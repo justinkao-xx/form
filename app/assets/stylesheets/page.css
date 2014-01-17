@@ -19,6 +19,9 @@ div.forms {
 	padding: 20px 20px 70px;
     width: 200px;
 }
+p {
+	text-align: center;
+}
 
 div.buttons {
     position: relative;
