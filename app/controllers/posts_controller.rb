@@ -18,11 +18,8 @@ class PostsController < ApplicationController
       flash[:success] = "Post created!"
       redirect_to current_user
     else
-<<<<<<< HEAD
       render current_user
-=======
       render :new
->>>>>>> 3e832ac2bc58a9aca92e50176671bb35000eb3df
     end
   end
 
