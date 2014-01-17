@@ -1,20 +1,20 @@
-<% provide(:title, @user.name) %>
+<% provide(:title, @user.name.capitalize) %>
 
 <p class="content">
 	<p class="text">
 		You account information:</br>
-		Name: <%= @user.name %></br>
+		Name: <%= @user.name.capitalize %></br>
 		Email: <%= @user.email %>
 		<% if @user.posts.any? %>
-      	<h3>Posts (<%= @user.posts.count %>)</h3>
+      	<h3>This user has (<%= @user.posts.count %>) posts</h3>
 
 <%-# Printing out all the posts of chosen user -%>
 
  		 <% @posts.each do |i| %>
  		 	<li>
  		 	This post was created at: <%= i.created_at %></br>
- 		 	Contents of the post: <%= i.content %>
-			<%= link_to "Delete this post", post_path(i), method: :delete, class: "black", data: { confirm: "You sure?" } %>
+ 		 	Contents of the post: <b><%= i.content.capitalize %></b>
+			<h3><%= link_to "Delete this post", post_path(i), method: :delete, class: "black", data: { confirm: "You sure?" } %></h3>
  		 	</li>
  		 <% end %>
     	<% end %>

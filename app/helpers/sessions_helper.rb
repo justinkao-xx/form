@@ -37,6 +37,6 @@ module SessionsHelper
     session[:return_to] = request.url if request.get?
   end
   def signed_in?
-                !current_user.nil?
+    !current_user.nil?
   end
 end

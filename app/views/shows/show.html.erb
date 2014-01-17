@@ -1,0 +1,11 @@
+<% provide(:title, @show.name) %>
+
+<p class="content">
+	<p class="text">
+		About the show:</br>
+		Name: <%= @show.name %></br>
+		Description: <%= @show.description %></br>
+		<%= link_to "Back to previous page", shows_path, class: "black" %>
+	</p>
+	</p>
+	
