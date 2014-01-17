@@ -1,11 +1,9 @@
 <% provide(:title, "Converter") %>
-<p class="content">
-	<p class="text">
-		<h2 align="center">Currency converter</h2>
+
+<p>Currency converter</p>
 		You can convert EUR to any currency in the drop-down menu!</br>
 		Currency rates are updated every bank-day, from the web.
 		
-	</p>
 <%= form_tag(form_converter_path) do %>
 	<div class="forms">
 	<%= label_tag("Amount:") %>
@@ -16,4 +14,4 @@
 	<%= submit_tag 'Calculate!' %>
 	</div>
 <% end %>
-</p>
+
