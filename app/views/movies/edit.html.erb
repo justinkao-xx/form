@@ -3,7 +3,7 @@
 	<p class="text">
 		Edit your account information here:	
 	</p>
-<%= form_for :movie, :html=>{:method=>:put} do |f| %>
+<%= form_for :movie do |f| %>
     	<div class="forms">
     		<%= f.text_field :name, placeholder: "Name of the movie..." %>
 			<%= f.text_area :description, placeholder: "Describe the movie..." %>
