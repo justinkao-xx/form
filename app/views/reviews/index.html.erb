@@ -4,11 +4,14 @@
 		A list of reviews
 	</p>
 <table align="center">
+	<tr>
+		<td align="left">Heading</td>
+		<td align="left">Written by</td>
+	</tr>
   <% @reviews.each do |review| %>
  	<tr>
- 		<td align="left">
- 			<%= link_to review.heading.capitalize, review, class: "black" %>
- 		</td>
+ 		<td align="left"><%= link_to review.heading.capitalize, review, class: "black" %></td>
+ 		<td align="left"><%= link_to review.user.name, review.user, class: "black" %></td>	
 	<% if current_user.admin? && !current_user?(@user) %>
 		<td>
 			<%= link_to "Delete this review", review, method: :delete, class: "black", data: { confirm: "You sure?" } %>
