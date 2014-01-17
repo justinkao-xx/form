@@ -24,6 +24,16 @@ class ShowsController < ApplicationController
     end
   end
   
+  def update
+    
+    if @show.update_attributes(show_params)
+      flash[:success] = "Update successful"
+      redirect_to @show
+    else
+      render 'edit'
+    end
+  end
+  
   def destroy
     Shows.find(params[:id]).destroy
     flash[:success] = "Show deleted from the database."

@@ -24,6 +24,15 @@ class MoviesController < ApplicationController
     end
   end
   
+  def update
+    if @movie.update_attributes(movie_params)
+      flash[:success] = "Update successful"
+      redirect_to @movie
+    else
+      render 'edit'
+    end
+  end
+  
   def destroy
     Movie.find(params[:id]).destroy
     flash[:success] = "Movie deleted from the database."
