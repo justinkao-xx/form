@@ -1,22 +1,35 @@
 <% provide(:title, @user.name.capitalize) %>
 
-<p class="content">
-	<p class="text">
-		You account information:</br>
-		Name: <%= @user.name.capitalize %></br>
-		Email: <%= @user.email %>
-		<% if @user.posts.any? %>
-      	<h3>This user has (<%= @user.posts.count %>) posts</h3>
+<b>User information:</b>
 
-<%-# Printing out all the posts of chosen user -%>
-
+<table align="center">
+	<tr>
+		<td align="left"><b>Name</b></td>
+		<td align="left"><b>Email</b></td>
+		<td align="left"><b>Created</b></td>
+		<td align="left"><b>Updated</b></td>
+	</tr>
+ 	<tr>
+ 		<td align="left"><%= @user.name.capitalize %></td>
+ 		<td align="left"><%= @user.email %></td>
+ 		<td align="left"><%= @user.created_at %></td>
+ 		<td align="left"><%= @user.updated_at %></td>
+ 	</tr>
+</table>
+<% if @user.posts.any? %>
+      	<h3>This user has made(<%= @user.posts.count %>) posts</h3>
+<table align="center">
+	<tr>
+		<td align="left"><b>Content of the post</b></td>
+		<td align="left"><b>Created</b></td>
+		<td align="left"><b>Destroy post</b></td>
+	</tr>
  		 <% @posts.each do |i| %>
- 		 	<li>
- 		 	This post was created at: <%= i.created_at %></br>
- 		 	Contents of the post: <b><%= i.content.capitalize %></b>
-			<h3><%= link_to "Delete this post", post_path(i), method: :delete, class: "black", data: { confirm: "You sure?" } %></h3>
- 		 	</li>
+ 		 	<tr>
+ 		 	<td align="left"><%= i.content.capitalize %></td>
+ 		 	<td><%= i.created_at %></td>
+			<td><%= link_to "Delete this post", post_path(i), method: :delete, class: "black", data: { confirm: "You sure?" } %></td>
  		 <% end %>
     	<% end %>
-	</p>
-	
+    </tr>
+</table>

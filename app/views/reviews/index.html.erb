@@ -5,8 +5,11 @@
 	</p>
 <table align="center">
 	<tr>
-		<td align="left">Heading</td>
-		<td align="left">Written by</td>
+		<td align="left"><b>Heading</b></td>
+		<td align="left"><b>Written by</b></td>
+		<% if current_user.admin? && !current_user?(@user) %>
+		<td align="left"><b>Admin functions</b></td>
+		<% end %>
 	</tr>
   <% @reviews.each do |review| %>
  	<tr>

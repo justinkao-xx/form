@@ -3,16 +3,26 @@
 	<p class="text">
 		A list of different shows in the database
 	</p>
-<ul class="users">
+<table align="center">
+	<tr>
+		<td align="left"><b>Name</b></td>
+		<td align="left"><b>Year</b></td>
+		<% if current_user.admin? && !current_user?(@user) %>
+		<td align="left"><b>Admin functions</b></td>
+		<% end %>
+	</tr>
   <% @shows.each do |show| %>
- 	<li>
-	<%= link_to show.name, show, class: "black" %>
-	<% if current_user.admin? && !current_user?(@user) %> |
-	<%= link_to "Delete this show", show, method: :delete, class: "black", data: { confirm: "You sure?" } %>
+ 	<tr>
+ 		<td align="left"><%= link_to show.name, show, class: "black" %></td>
+ 		<td align="left"><%= link_to show.year, show, class: "black" %></td>
+	<% if current_user.admin? && !current_user?(@user) %>
+		<td>
+			<%= link_to "Delete this show", show, method: :delete, class: "black", data: { confirm: "You sure?" } %>
+  		</td>
   	<% end %>
-    </li>
+ 	</tr>
  <% end %>
-</ul>
+</table>
 <p class="text">
 	<%= link_to "A show you know about is not listed here? Click here to add it!", new_show_path, class: "black" %>
 </p>
