@@ -1,7 +1,7 @@
 <% provide(:title, "New show") %>
 
 <p class="content">
-    Create a new show into our database:
+    <b>Create a new show into our database:</b>
     <%= form_for(@show) do |f| %>
     	<div class="forms">
 			<%= f.text_field :name, placeholder: "Type in the name of the show...", autofocus: true %>

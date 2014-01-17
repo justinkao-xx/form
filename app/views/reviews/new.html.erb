@@ -1,7 +1,7 @@
 <% provide(:title, "Create a review") %>
 
-<p class="content">
-    Write a new review:
+<p class="text">
+    <b>Write a new review:</b>
     <%= form_for(@review) do |f| %>
     	<div class="forms">
 			<%= f.text_field :heading, placeholder: "Type in the heading for your review...", autofocus: true %>
