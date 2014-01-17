@@ -1,6 +1,7 @@
 class MoviesController < ApplicationController
   before_action :signed_in_user, only: [:index,:edit,:update, :destroy]
   before_action :admin_user,     only: :destroy
+  before_action :set_movie, only: [:show, :edit, :update, :destroy]
   def index
     @movies = Movie.all
   end
@@ -39,7 +40,7 @@ class MoviesController < ApplicationController
   end
   
   def edit
-   
+    @movie = Movie.find(params[:id])
   end
    
   # Private section, makes the page unable to be seen for non logged in users
@@ -61,6 +62,10 @@ class MoviesController < ApplicationController
       redirect_to '/sessions/new', notice: "Please sign in!"
     end
     
+  end
+  
+  def set_movie
+    @movie = Movie.find(params[:id])
   end
   
 end
