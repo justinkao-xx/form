@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 20140117211639) do
     t.string   "heading"
     t.string   "content"
     t.integer  "user_id"
+    t.integer  "movie_id"
+    t.integer  "show_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "about"
