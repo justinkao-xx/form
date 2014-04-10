@@ -1,6 +1,7 @@
 class ShowsController < ApplicationController
   before_action :signed_in_user, only: [:index,:edit,:update, :destroy]
   before_action :admin_user,     only: :destroy
+  before_action :set_show, only: [:show, :edit, :update, :destroy]
   def index
     @shows = Show.all
   end
@@ -23,8 +24,11 @@ class ShowsController < ApplicationController
     end
   end
   
-  def update
+  def edit
     
+  end
+  
+  def update
     if @show.update_attributes(show_params)
       flash[:success] = "Update successful"
       redirect_to @show
@@ -62,7 +66,10 @@ class ShowsController < ApplicationController
       store_location
       redirect_to '/sessions/new', notice: "Please sign in!"
     end
-    
+  end
+  
+  def set_show
+    @show = Show.find(params[:id])
   end
 
 end

@@ -7,6 +7,7 @@ Harjutus::Application.routes.draw do
   resources :shows
   resources :reviews
   
+  
   get "posts/new"
   get "form/home"
   post "form/home"
